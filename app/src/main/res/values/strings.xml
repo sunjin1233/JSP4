@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android Login and Registration</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="hint_Phone">Phonenumber</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="btn_lend">LEND</string>
+    <string name="btn_take">TAKE</string>
+    <string name="btn_borrow">BORROW</string>
+    <string name="btn_return">RETURN</string>
+    <string name="name">Fullname</string>
+    <string name="text_lend_can">Empty Bikeport List</string>
+    <string name="text_lend_cannot">No Empty Bikeport</string>
+
+</resources>
