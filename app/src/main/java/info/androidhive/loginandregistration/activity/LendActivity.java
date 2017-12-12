@@ -29,7 +29,6 @@ import info.androidhive.loginandregistration.R;
 import info.androidhive.loginandregistration.app.AppConfig;
 import info.androidhive.loginandregistration.app.AppController;
 import info.androidhive.loginandregistration.helper.SQLiteHandler;
-import info.androidhive.loginandregistration.helper.SessionManager;
 
 /**
  * Created by CheolHwi on 2017-12-09.
@@ -40,8 +39,8 @@ public class LendActivity extends Activity{
     private static final String BIKENUM = "1";
     private TextView txtLend;
     private Button btnLend;
+    private Button btnGotoMain;
     private ProgressDialog pDialog;
-    private SessionManager session;
     private SQLiteHandler db;
 
     @Override
@@ -51,6 +50,7 @@ public class LendActivity extends Activity{
 
         btnLend = (Button) findViewById(R.id.button_lend);
         txtLend = (TextView) findViewById(R.id.textView_lend);
+        btnGotoMain = (Button) findViewById(R.id.button_gotomain_lend);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -59,8 +59,14 @@ public class LendActivity extends Activity{
         // SQLite database handler
         db = new SQLiteHandler(getApplicationContext());
 
-        // Session manager
-        session = new SessionManager(getApplicationContext());
+        btnGotoMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         findEmptyBikeport(BIKENUM);
     }
@@ -189,7 +195,7 @@ public class LendActivity extends Activity{
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Login Error: " + error.getMessage());
+                Log.e(TAG, "Lend Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
